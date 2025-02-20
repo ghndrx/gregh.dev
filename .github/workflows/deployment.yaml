@@ -1,7 +1,9 @@
 run-name: "☁️ CF › Deploy"
 name: "☁️ CF › Deploy"
 
-on: [pull_request]
+on:
+  pull_request:
+    types: [closed]
 
 jobs:
   job-publish:
