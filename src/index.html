@@ -18,18 +18,28 @@
 <body class="bg-[#0a192f] text-white">
     <div id="particles-js" class="particle-background"></div>
 
-    <nav class="hidden md:flex bg-[#0a192f]/90 backdrop-blur-md text-white fixed w-full z-10">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <div class="text-xl font-bold text-[#64ffda]">Greg</div>
-                <div class="space-x-6">
-                    <a href="#about" class="hover:text-[#64ffda] transition-colors">About</a>
-                    <a href="#experience" class="hover:text-[#64ffda] transition-colors">Experience</a>
-                    <a href="#tools" class="hover:text-[#64ffda] transition-colors">Tools</a>
-                    <a href="#projects" class="hover:text-[#64ffda] transition-colors">Projects</a>
-                </div>
-            </div>
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-75 shadow-lg backdrop-blur-md">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <div class="flex-shrink-0">
+            <span class="text-2xl font-bold text-[#64ffda]">Greg</span>
+          </div>
+          <div class="hidden md:flex space-x-6">
+             <a href="#about" class="px-3 py-2 rounded-md text-sm font-medium text-white hover:text-[#64ffda] transition-colors">About</a>
+             <a href="#experience" class="px-3 py-2 rounded-md text-sm font-medium text-white hover:text-[#64ffda] transition-colors">Experience</a>
+             <a href="#tools" class="px-3 py-2 rounded-md text-sm font-medium text-white hover:text-[#64ffda] transition-colors">Tools</a>
+             <a href="#projects" class="px-3 py-2 rounded-md text-sm font-medium text-white hover:text-[#64ffda] transition-colors">Projects</a>
+          </div>
+          <!-- Optional: Mobile menu icon -->
+          <div class="md:hidden">
+             <button class="text-white hover:text-[#64ffda] focus:outline-none focus:text-[#64ffda]">
+               <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+               </svg>
+             </button>
+          </div>
         </div>
+      </div>
     </nav>
 
     <main class="pt-20 relative">
