@@ -1,23 +1,30 @@
-# filepath: /Users/greg/Documents/repositories/gregh.dev/.github/workflows/deployment.yaml
-name: Deploy to Cloudflare Pages
+run-name: "☁️ CF › Deploy"
+name: "☁️ CF › Deploy"
 
-on:
-  push:
-    branches:
-      - main
+on: [push]
 
 jobs:
-  deploy:
+  job-publish:
+    name: "📦 Publish to Cloudflare"
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: read
+      deployments: write
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - name: "Checkout"
+        id: task_publish_checkout
+        uses: actions/checkout@v4
 
-      - name: Deploy to Cloudflare Pages
-        uses: cloudflare/pages-action@v1
+      - name: "☁️ Publish to Cloudflare Pages"
+        id: task_publish_push
+        uses: aetherinox/cloudflare-publish-action@latest
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: gregh
-          directory: .
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}       # Cloudflare API Token from https://dash.cloudflare.com/profile/api-tokens
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}     # Cloudflare account ID shown on the right side of the CF website
+          projectName: ${{ vars.PROJECT_NAME }}          # Project name assigned during creation (see Workers & Pages section)
+          directory: .                                        # The directory where your built site is located
+          branch: main                                        # The branch to deploy; defaults to the branch triggering the workflow
+          workingDirectory: .                                 # Working directory relative to the repository root
+          wranglerVersion: '3'                                # Optional: Specify a Wrangler version (e.g. '3' or 'beta')
+          commitDirty: false                                  # Optional: Mark workspace as dirty or not for deployment
+          skipCaching: false                                  # Optional: Whether to skip asset caching to speed up builds
