@@ -1,7 +1,9 @@
 run-name: "☁️ CF › Deploy"
 name: "☁️ CF › Deploy"
 
-on: [push]
+on:
+  pull_request:
+    types: [closed]
 
 jobs:
   job-publish:
@@ -11,7 +13,7 @@ jobs:
       contents: read
       deployments: write
     steps:
-      - name: "☑️ Checkout"
+      - name: "Checkout"
         id: task_publish_checkout
         uses: actions/checkout@v4
 
@@ -21,8 +23,8 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}       # Cloudflare API Token from https://dash.cloudflare.com/profile/api-tokens
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}     # Cloudflare account ID shown on the right side of the CF website
-          projectName: ${{ variables.PROJECT_NAME }}          # Project name assigned during creation (see Workers & Pages section)
-          directory: .                                        # The directory where your built site is located
+          projectName: ${{ vars.PROJECT_NAME }}               # Project name assigned during creation (see Workers & Pages section)
+          directory: src/                                     # The directory where your built site is located
           branch: main                                        # The branch to deploy; defaults to the branch triggering the workflow
           workingDirectory: .                                 # Working directory relative to the repository root
           wranglerVersion: '3'                                # Optional: Specify a Wrangler version (e.g. '3' or 'beta')
