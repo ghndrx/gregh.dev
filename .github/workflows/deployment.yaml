@@ -11,7 +11,7 @@ jobs:
       contents: read
       deployments: write
     steps:
-      - name: "☑️ Checkout"
+      - name: "Checkout"
         id: task_publish_checkout
         uses: actions/checkout@v4
 
