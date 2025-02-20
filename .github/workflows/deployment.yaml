@@ -21,7 +21,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}       # Cloudflare API Token from https://dash.cloudflare.com/profile/api-tokens
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}     # Cloudflare account ID shown on the right side of the CF website
-          projectName: ${{ variables.PROJECT_NAME }}          # Project name assigned during creation (see Workers & Pages section)
+          projectName: ${{ env.PROJECT_NAME }}          # Project name assigned during creation (see Workers & Pages section)
           directory: .                                        # The directory where your built site is located
           branch: main                                        # The branch to deploy; defaults to the branch triggering the workflow
           workingDirectory: .                                 # Working directory relative to the repository root
