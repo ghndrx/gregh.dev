@@ -1,0 +1,9 @@
+.DS_Store
+*.pdf
+*.iso
+*.dmg
+*.tar
+truenas-*/
+.terraform/
+*.tfstate
+*.tfstate.backup
