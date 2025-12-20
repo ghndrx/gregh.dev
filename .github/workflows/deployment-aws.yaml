@@ -1,0 +1,31 @@
+run-name: "☁️ AWS › Deploy"
+name: "☁️ AWS › Deploy"
+
+on: [push]
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  job-publish:
+    name: "📦 Publish to AWS S3/CloudFront"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout"
+        id: task_publish_checkout
+        uses: actions/checkout@v4
+
+      - name: "Configure AWS Credentials"
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: us-east-1
+
+      - name: "Sync to S3"
+        run: |
+          aws s3 sync src/ s3://gregh.dev/ --delete --cache-control "public, max-age=3600"
+
+      - name: "Invalidate CloudFront Cache"
+        run: |
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
