@@ -1,7 +1,10 @@
 run-name: "☁️ AWS › Deploy"
 name: "☁️ AWS › Deploy"
 
-on: [push]
+on: 
+  push:
+    branches: [main]
+  workflow_dispatch:
 
 permissions:
   id-token: write
