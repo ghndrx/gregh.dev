@@ -63,6 +63,12 @@
                 <a href="#contact" class="border border-[#64ffda] text-[#64ffda] px-6 py-3 rounded hover:bg-[#64ffda]/10 transition-colors">
                     Get In Touch
                 </a>
+                <a href="/Gregory_Hendrickson_Resume.pdf" 
+                   onclick="gtag('event', 'download', {event_category: 'resume', event_label: 'pdf'});"
+                   download
+                   class="ml-4 border border-[#64ffda] text-[#64ffda] px-6 py-3 rounded hover:bg-[#64ffda]/10 transition-colors">
+                    <i class="fas fa-download mr-2"></i>Resume
+                </a>
 
                 <div id="scroll-arrow" class="fixed bottom-10 left-0 right-0 flex justify-center pointer-events-none">
                     <i class="fas fa-arrow-down text-4xl text-[#64ffda] animate-bounce"></i>
@@ -76,8 +82,11 @@
                 <img src="https://cdn.cloud.gregh.dev/images/profile.png" alt="Greg Hendrickson Profile Picture" class="w-32 h-32 md:w-48 md:h-48 rounded-full mb-6 md:mb-0 md:mr-8 shadow-lg" data-aos="fade-up">
                 <div data-aos="fade-up" data-aos-delay="100">
                   <h2 class="text-4xl font-bold text-[#64ffda] mb-4">About Me</h2>
-                  <p class="text-xl text-[#8892b0]">
-                    I am passionate about building resilient, scalable cloud infrastructure for health tech companies. I specialize in AWS, GCP, and Kubernetes while continuously exploring innovative ways to streamline operations and automate processes. Whether it's optimizing CI/CD pipelines or architecting hybrid cloud systems, I love solving complex challenges and making technology work smarter.
+                  <p class="text-xl text-[#8892b0] mb-4">
+                    I build resilient, scalable cloud infrastructure for health tech companies. I specialize in AWS, GCP, and Kubernetes while continuously finding ways to automate and optimize.
+                  </p>
+                  <p class="text-lg text-[#8892b0]">
+                    I've been self-hosting since around 2010 — started with whatever secondhand hardware I could get my hands on or build, plus rented dedicated servers. Over the years: Dell R720s, Supermicro 36-bay JBODs, HP DL360/380s, now scaled down to Lenovo mini PCs and a small NAS. pfSense firewalls, UFW rules, DayZ servers with custom loot tables and anti-cheat scripts, containerized game servers for Palworld and Minecraft. Currently running Hetzner dedicated instances with Tailscale mesh networking. The homelab never stops.
                   </p>
                 </div>
               </div>
@@ -91,27 +100,51 @@
                 <!-- Pluto Health Experience -->
                 <div class="relative border-l border-[#64ffda] pl-8 pb-12" data-aos="fade-up" data-aos-delay="100">
                   <div class="absolute w-3 h-3 bg-[#64ffda] rounded-full -left-[6px]"></div>
-                  <h3 class="text-xl font-bold text-white">DevOps Engineer - Pluto Health</h3>
-                  <p class="text-[#8892b0] mb-4">Feb 2024 - Present</p>
+                  <h3 class="text-xl font-bold text-white">SysOps/DevOps Engineer - Pluto Health</h3>
+                  <p class="text-[#8892b0] mb-4">Feb 2024 - Present • Remote</p>
                   <ul class="text-[#8892b0] space-y-2">
                     <li>• Architected and maintained AWS/GCP hybrid cloud infrastructure</li>
-                    <li>• Implemented comprehensive security posture using AWS WAF, GuardDuty, and Security Hub</li>
-                    <li>• Led automation and incident response initiatives</li>
-                    <li>• Managed CI/CD pipelines using GitHub Actions</li>
+                    <li>• Made infrastructure audit-ready with Vanta/Drata for SOC 2, HIPAA, ISO 27001</li>
+                    <li>• Organized AWS IAM resources, scoping, and access policies across deployments</li>
+                    <li>• Implemented security posture using AWS WAF, GuardDuty, Security Hub, and SCPs</li>
+                    <li>• Deployed EKS Kubernetes with ArgoCD GitOps, reducing deployment time 70%</li>
+                    <li>• Led FinOps initiatives for cost allocation and resource optimization</li>
                   </ul>
                 </div>
                 <!-- HCL Tech Experience -->
                 <div class="relative border-l border-[#64ffda] pl-8 pb-12" data-aos="fade-up" data-aos-delay="200">
                   <div class="absolute w-3 h-3 bg-[#64ffda] rounded-full -left-[6px]"></div>
-                  <h3 class="text-xl font-bold text-white">Cloud Engineer - HCL Tech</h3>
-                  <p class="text-[#8892b0] mb-4">Dec 2021 - Jan 2024</p>
+                  <h3 class="text-xl font-bold text-white">Cloud Engineer - HCL Technologies</h3>
+                  <p class="text-[#8892b0] mb-4">Dec 2021 - Jan 2024 • Sacramento, CA (Remote)</p>
                   <ul class="text-[#8892b0] space-y-2">
-                    <li>• Designed and implemented cloud solutions on GCP</li>
-                    <li>• Supported cloud migration projects and optimization efforts</li>
-                    <li>• Collaborated with cross-functional teams to streamline cloud operations</li>
+                    <li>• Designed and implemented cloud solutions on Google Cloud Platform</li>
+                    <li>• Led cloud migration projects from on-prem to GCP</li>
+                    <li>• Developed Terraform automation for standardized deployments</li>
+                    <li>• Implemented observability solutions for application performance</li>
                   </ul>
                 </div>
-
+                <!-- Cal OES Experience -->
+                <div class="relative border-l border-[#64ffda] pl-8 pb-12" data-aos="fade-up" data-aos-delay="300">
+                  <div class="absolute w-3 h-3 bg-[#64ffda] rounded-full -left-[6px]"></div>
+                  <h3 class="text-xl font-bold text-white">IT Associate - California Governor's Office of Emergency Services</h3>
+                  <p class="text-[#8892b0] mb-4">Mar 2021 - Aug 2021 • Mather, CA</p>
+                  <ul class="text-[#8892b0] space-y-2">
+                    <li>• Provided IT infrastructure support for state emergency operations</li>
+                    <li>• Managed endpoint deployments across distributed government teams</li>
+                    <li>• Supported mission-critical network and communications systems</li>
+                  </ul>
+                </div>
+                <!-- Palisades Tahoe Experience -->
+                <div class="relative border-l border-[#64ffda] pl-8 pb-12" data-aos="fade-up" data-aos-delay="400">
+                  <div class="absolute w-3 h-3 bg-[#64ffda] rounded-full -left-[6px]"></div>
+                  <h3 class="text-xl font-bold text-white">IT Support Specialist - Squaw Valley Ski Holdings (Palisades Tahoe)</h3>
+                  <p class="text-[#8892b0] mb-4">Sep 2018 - Mar 2021 • Olympic Village, CA</p>
+                  <ul class="text-[#8892b0] space-y-2">
+                    <li>• Delivered technical support for 500+ employees across resort operations</li>
+                    <li>• Managed Active Directory, endpoint imaging, and hardware deployments</li>
+                    <li>• Troubleshot POS systems, network connectivity, and enterprise applications</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </section>
