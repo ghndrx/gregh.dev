@@ -1,5 +1,6 @@
 .DS_Store
 *.pdf
+!src/Gregory_Hendrickson_Resume.pdf
 *.iso
 *.dmg
 *.tar
